@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <%- include('../partials/head'); %>
+  
+  <script type="text/javascript">
+    window.onload = function () {
+      L.mapquest.key = 'YTDTuzdAtLHt5s15mDrKFfwgy9bdHaZt';
+
+      var map = L.mapquest.map('map', {
+        center: [21.1591158, -100.936718],
+        layers: L.mapquest.tileLayer('map'),
+        zoom: 12
+      });
+
+      map.addControl(L.mapquest.control());
+    }
+  </script>
+
+</head>
+
+<body>
+  <%- include('../partials/navbar'); %>
+
+    <div id="map" style="width: 100%; height: 530px;"></div>
+
+  <%- include('../partials/script'); %>
+</body>
+
+<footer>
+  <%- include('../partials/footer'); %>
+</footer>
+
+</html>
