@@ -10,4 +10,12 @@ router.get('/ubicacion', function(req, res, next) {
   res.render('pages/ubicacion', { page: 'Ubicacion', menuId: 'ubicacion' });
 });
 
+router.get('/logeo', function(req, res, next) {
+  res.render('pages/logeo', { page: 'Logeo', menuId: 'logeo' });
+});
+
+router.get('/registro', function(req, res, next) {
+  res.render('pages/registro', { page: 'Registro', menuId: 'registro' });
+});
+
 module.exports = router;

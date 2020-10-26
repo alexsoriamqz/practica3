@@ -9,7 +9,9 @@
 <body>
   <%- include('partials/navbar'); %>
 
-  <div class="jumbotron">
+  <!--  <div class="jumbotron">
+    <br>
+    <br>
     <h1 class="display-4">Bienvenido a NodeJS & Express</h1>
     <p class="lead">Este es un ejemplo basico</p>
     <hr class="my-4">
@@ -17,7 +19,53 @@
     <img src="/images/nodejs.png" width="400" height="300"><br>
 
     <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
-  </div>
+  </div>  -->
+
+  <!-- Portfolio Section-->
+  <section class="page-section portfolio" id="portfolio">
+    <div class="container">
+        <!-- Portfolio Section Heading-->
+        <br><br><br>
+        <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Pagina de Alejandro Soria</h2>
+        <!-- Icon Divider-->
+        <br>
+        <div class="divider-custom">
+            <div class="divider-custom-line"></div>
+            <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+            <div class="divider-custom-line"></div>
+        </div><br>
+        <!-- Portfolio Grid Items-->
+        <div class="row">
+            <!-- Portfolio Item 1-->
+            <div class="col-md-4 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-glasses fa-3x"><br><a href="/acercade">Que me gusta</a></i></div>
+                    </div>
+                    <img class="img-fluid" src="/images/futbol.png" alt="" />
+                </div>
+            </div>
+            <!-- Portfolio Item 2-->
+            <div class="col-md-4 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                        <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-glasses fa-3x"><br><a href="/acercade">Acerca de mi</a></i></div>
+                    </div>
+                    <img class="img-fluid" src="/images/persona.png" alt="" />
+                </div>
+            </div>
+            <!-- Portfolio Item 3-->
+            <div class="col-md-4 col-lg-4 mb-5">
+                <div class="portfolio-item mx-auto" data-toggle="modal" data-target="#portfolioModal1">
+                    <div class="portfolio-item-caption d-flex align-items-center justify-content-center h-100 w-100">
+                         <div class="portfolio-item-caption-content text-center text-white"><i class="fas fa-glases fa-3x"><a href="/acercade">Mi futuro</a></i></div>
+                      </div><br>
+                    <img class="img-fluid" src="/images/carrera.png" alt="" />
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
 
   <%- include('partials/script'); %>
 </body>

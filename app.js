@@ -3,12 +3,18 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+var InitiateMongoServer = require("./config/db");
+var bodyParser = require('body-parser');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var acercadeRouter = require('./routes/acercade');
 
 var app = express();
+
+//Inicializa la base de datos
+InitiateMongoServer();
+app.use(bodyParser.json()); //convierte el dato a formato JSON
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
