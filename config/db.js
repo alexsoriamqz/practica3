@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+//const bcrypt = require("bcrypt");
  
 // Copia la URL del sitio de mongo DB
 const MONGOURI = "mongodb+srv://test:test@cluster0.qaixa.mongodb.net/AWOS?retryWrites=true&w=majority";

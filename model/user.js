@@ -1,5 +1,8 @@
 var mongoose = require("mongoose");
+//var bcrypt = require("bcrypt"); //
 var Schema = mongoose.Schema;
+
+//var saltRounds = 10;    //
  
 var userSchema = new Schema({
     email: {
@@ -14,6 +17,22 @@ var userSchema = new Schema({
         minlength: 6
     }
 });
+
+/*userSchema.pre('save', function(next){
+    if(this.isNew || this.isModified('password')){
+       const document = this;
+       bcrypt.hash(document.password, saltRounds, (err, hashedPassword)=>{
+          if(err){
+              next(err);
+          }else{
+              document.password = hashedPassword;
+              next();
+          }
+       }); 
+    }else{
+        next();
+    }
+});*/
 
 //Metodo para logearse
 /*userSchema.methods.isCorrectPassword = function(password, callback){
