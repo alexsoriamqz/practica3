@@ -10,6 +10,14 @@ router.get('/ubicacion', function(req, res, next) {
   res.render('pages/ubicacion', { page: 'Ubicacion', menuId: 'ubicacion' });
 });
 
+router.get('/stream', function(req, res, next) {
+  res.render('pages/stream', { page: 'Stream', menuId: 'stream' });
+});
+
+router.get('/clima', function(req, res, next) {
+  res.render('pages/clima', { page: 'Clima', menuId: 'clima' });
+});
+
 router.get('/logeo', function(req, res, next) {
   res.render('pages/logeo', { page: 'Logeo', menuId: 'logeo' });
 });

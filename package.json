@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "lite-server",
     "start": "nodemon ./bin/www"
   },
   "dependencies": {
@@ -17,6 +18,7 @@
     "nodemon": "^2.0.4"
   },
   "devDependencies": {
+    "lite-server": "^2.5.4",
     "nodemon": "^2.0.4"
   }
 }

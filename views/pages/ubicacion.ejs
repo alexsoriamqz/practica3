@@ -5,6 +5,21 @@
   <%- include('../partials/head'); %>
   
   <script type="text/javascript">
+    function iniciarMap(){
+    var coord = {lat:21.1591158 ,lng: -100.936718};
+    var map = new google.maps.Map(document.getElementById('map'),{
+      zoom: 10,
+      center: coord
+    });
+    var marker = new google.maps.Marker({
+      position: coord,
+      map: map
+    });
+}
+
+  </script>
+  
+  <!--<script type="text/javascript">
     window.onload = function () {
       L.mapquest.key = 'YTDTuzdAtLHt5s15mDrKFfwgy9bdHaZt';
 
@@ -16,14 +31,16 @@
 
       map.addControl(L.mapquest.control());
     }
-  </script>
+  </script>-->
 
 </head>
 
 <body>
   <%- include('../partials/navbar'); %>
 
+    <!--<div id="map" style="width: 100%; height: 530px;"></div>-->
     <div id="map" style="width: 100%; height: 530px;"></div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAplep03JIfEPTPEmop82eudcaBzq0mb9Y&callback=iniciarMap"></script>
 
   <%- include('../partials/script'); %>
 </body>
@@ -33,3 +50,4 @@
 </footer>
 
 </html>
+
