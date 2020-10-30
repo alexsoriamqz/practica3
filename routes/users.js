@@ -1,7 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../model/user');
-const passport = require('passport');
+//const passport = require('passport');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -45,6 +45,6 @@ router.post("/logeo", function(req, res, next) {
      }
    });
  });
- router.route('/ouath/google').post(passport.authenticate('googleToken',{session: false}));
+ //router.route('/ouath/google').post(passport.authenticate('googleToken',{session: false}));
 
 module.exports = router;
