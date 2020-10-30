@@ -16,7 +16,7 @@ var userSchema = new Schema({
 });
 
 //Metodo para logearse
-userSchema.methods.isCorrectPassword = function(password, callback){
+/*userSchema.methods.isCorrectPassword = function(password, callback){
     compare(password, this.password, function(err, same){
         if(err){
             callback(err);
@@ -24,6 +24,6 @@ userSchema.methods.isCorrectPassword = function(password, callback){
             callback(err, same);
         }
     });
-}
+}*/
 
 module.exports = mongoose.model('User', userSchema);

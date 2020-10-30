@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 const User = require('../model/user');
+const passport = require('passport');
 
 /* GET users listing. */
 router.get('/', function(req, res, next) {
@@ -8,8 +9,8 @@ router.get('/', function(req, res, next) {
 }); 
 
 /*  LOGIN */
-router.post("/logeo", function(req, res, next) {
- 
+router.post("/registro", function(req, res, next) {
+  console.log(req.body);
   var user = new User({
       email: req.body.email,
       password: req.body.password
@@ -17,19 +18,33 @@ router.post("/logeo", function(req, res, next) {
 
   //Guarda un registro en Mongo
   user.save((err, response) => {
-      if (err) res.status(400).send(err);
-      res.status(200).send(response);
+      if (err) {req.flash('error_msg','Error al crear el Usuario')
+      res.redirect('/signup')}else{
+      req.flash('success_msg','Usuario Creado')
+      res.redirect('/login');}
   });
-
-
   
-  //Busca un registro mediante el email
-  /*
-  User.findById(req.body.email, (err, user) => {
-      if (err) res.status(400).send(err);
-      res.status(200).send(user);
-  });
-  */
 });
+
+router.post("/logeo", function(req, res, next) { 
+  let email=req.body.email;
+  let password=req.body.password;
+ 
+   User.find({email,password}, (err, user) => {
+     if (err){
+       req.flash('error_msg','No existe el usuario');
+         res.redirect('/logeo');
+    }
+     else{
+       if(!user || user=="" ){ 
+         req.flash('error_msg','El usuario o la contraseña no son validos');
+          res.redirect('/logeo');}
+       else{
+         res.redirect('/');
+       }
+     }
+   });
+ });
+ router.route('/ouath/google').post(passport.authenticate('googleToken',{session: false}));
 
 module.exports = router;
