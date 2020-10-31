@@ -2,19 +2,41 @@
 <html>
     <head>
         <link rel='stylesheet' href='/stylesheets/style.css' />
+        
     </head>
     <body>
-        
-    <h1>Acerca de Manuel Alejandro Soria Marquez</h1>
 
-    <img src="/images/newyork.jpg" width="500" height="400">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+            <a class="navbar-brand" href="#">Informacion</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li><a href="#"><div id="google_translate_element"></div></a></li>       
+              </ul>
+            </div>
+          </nav>
 
-    <h2>Tengo 24 años y quiero dedicarme a administrar bases de datos, porque es algo que me gusta y se me da bien, me gusta mucho hacer deporte y jugar futbol</h1>
-    <h2>Tengo una hija de casi 6 años, soy de Dolores Hidalgo. Ya antes habia estudiado la carrera de Mecatronica pero no fue lo que esperaba y por razon quize estudiar desarrollo de software</h1>
-    
+        <script type="text/javascript">
+            function googleTranslateElementInit(){
+                new google.translate.TranslateElement({pageLanguage:'es', layout:google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+            }
+        </script>
+    <div class="center-block">   
+    <h3 class="display-4">Acerca de Manuel Alejandro Soria Marquez</h3><br>
+    <div class="col-md-6 ">
+    <img src="/images/newyork.jpg" width="500" height="400" class="img-responsive"><br>
+    </div>
+
+    <blockquote class="blockquote"><br>
+    <p class="display-5">Tengo 24 años y quiero dedicarme a administrar bases de datos, porque es algo que me gusta y se me da bien, me gusta mucho hacer deporte y jugar futbol</p>
+    <p class="display-5">Tengo una hija de casi 6 años, soy de Dolores Hidalgo. Ya antes habia estudiado la carrera de Mecatronica pero no fue lo que esperaba y por razon quize estudiar desarrollo de software</p>
+    </blockquote>
       <a class="btn btn-primary btn-lg" href="/" role="button">Regresar</a>
-  </body>
-  <footer>
+    </div> 
+    
+        <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+    </body>
+    <footer>
     <%- include('partials/footer'); %>
-</footer>
+    </footer>
 </html>
