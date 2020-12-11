@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    
+   
+    
+      
+    </body>
+
+    
+
+  </head>
+  <body>
+    
+  <!--<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div class="card">
+      <div class="card-header">
+        <ul class="nav nav-pills w-100">
+          <li class="nav-pill active">
+            <H1><a class="nav-link">Listado de los jugadores</a></H1>
+          </li>
+          <h2><li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+              Dropdown link
+            </a>
+            <div class="dropdown-menu">
+              <a class="dropdown-item" href="/jugadores">Jugadores</a>
+              <a class="dropdown-item" href="/equipos">Equipos</a>
+              <a class="dropdown-item" href="/registros">Inscripciónes</a>
+            </div>
+          </li></h2>
+          <li class="nav-pill ml-auto">
+            <h1><a class="nav-link active"  href="/jugadores/add">Agregar</a></h1>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>-->
+
+  <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+    <!-- Brand -->
+      <H2 class="navbar-brand">Listado de los jugadores</H2>
+      
+      
+      <h3><li class="nav-item dropdown">
+        <a class="navbar-brand" href="#" id="navbardrop" data-toggle="dropdown">
+          Categorias
+        </a>
+        <div class="dropdown-menu">
+          <h2><a class="dropdown-item" href="/jugadores">Jugadores</a></h2>
+          <h2><a class="dropdown-item" href="/equipos">Equipos</a></h2>
+          <h2><a class="dropdown-item" href="/registros">Inscripciónes</a></h2>
+        </div>
+      </li></h3>
+
+      <!-- Links -->
+    <ul class="navbar-nav">
+      <li class="navbar-nav mr-auto">
+        <h1><a class="nav-link active"  href="/">Inicio</a></h1>
+      </li>
+      <li class="navbar-nav mr-auto">
+        <h1><a class="nav-link active"  href="/jugadores/add">Agregar</a></h1>
+      </li>
+
+    </ul>
+  </nav><br>
+
+  <div class="jumbotron">
+    <table  id="tablaJugadores" class="display" style="width:95%">
+        <thead>
+            <tr>
+                <th>Clave Jugador</th>
+                <th>Nombre</th>
+                <th>Apellidos</th>
+                <th>Nacionalidad</th>
+                <th>Fecha de Nacimiento</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.length > 0){ %>
+              <% for ( var i = 0 ; i < data.length ; i++){ %>
+                <tr>
+                  <td>
+                    <%= data[i].ClaveJugador%>
+                  </td>
+                  <td>
+                    <%= data[i].Nombre%>
+                  </td>
+                  <td>
+                    <%= data[i].Apellidos%>
+                  </td>
+                  <td>
+                    <%= data[i].Nacionalidad%>
+                  </td>
+                  <td>
+                    <%= data[i].FechaNac%>
+                  </td>
+                  <td>
+                    <a class="btn btn-outline-success" href="../jugadores/update/<%=data[i].ClaveJugador%>">Editar</a> 
+                    <a class="btn btn-outline-danger" onclick="return alert('¿Estas seguro?')" href="../jugadores/delete/<%=data[i].ClaveJugador%>"> Eliminar</a>
+                  </td>
+                </tr>
+              <% } %>
+            <% } %>
+          </tbody>
+    </table><br>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="javascripts/jugadores.js"></script>
+
+  </body>
+  <footer>
+    <%- include('../partials/footer'); %>
+    
+  </footer>
+
+</html>

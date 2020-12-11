@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+        <!-- Brand -->
+          <H2 class="navbar-brand">Modificando Equipo</H2>
+              
+          <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="navbar-nav mr-auto">
+            <h1><a class="nav-link active"  href="/equipos">Regresar</a></h1>
+          </li>
+    
+        </ul>
+    </nav>
+
+        <div class="card">
+            <div id="login-row" class="row justify-content-center align-items-center" style="background-color:lightgray;">
+                <div id="login-column" class="col-md-6">
+                    <div id="login-box" class="col-md-12">
+                        <div class="card-body">
+                            <form action="/equipos/update" method="post">
+                                <div class="form-group">
+                                    <h2><label>Clave de Equipo:</label></h2>
+                                    <input type="text" class="form-control" name="ClaveEquipo" value="<%= ClaveEquipo %>" autocomplete="off" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <h2><label>Nombre del equipo:</label></h2>
+                                    <input type="text" class="form-control" name="Nombre" value="<%= Nombre %>" autocomplete="off" required>
+                                </div>
+                                <div class="form-group">
+                                    <h2><label>Entrenador:</label></h2>
+                                    <input type="text" class="form-control" name="Entrenador" value="<%= Entrenador %>" autocomplete="off" required>
+                                </div>
+                                <div class="form-group">
+                                    <h2><label>Ciudad:</label></h2>
+                                    <input type="text" class="form-control" name="Ciudad" value="<%= Ciudad %>" autocomplete="off" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <h2><label>Pais:</label></h2>
+                                    <input type="text" class="form-control" name="Pais" value="<%= Pais %>" autocomplete="off" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <input type="submit" class="btn btn-info" value="Agregar" />
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="javascripts/equipos.js"></script>
+
+  </body>
+  <footer>
+    <%- include('../partials/footer'); %>
+    
+  </footer>
+
+</html>

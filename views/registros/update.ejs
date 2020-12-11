@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+        <!-- Brand -->
+          <H2 class="navbar-brand">Modificando un Registro</H2>
+              
+          <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="navbar-nav mr-auto">
+            <h1><a class="nav-link active"  href="/registros">Regresar</a></h1>
+          </li>
+    
+        </ul>
+    </nav>
+
+    <div class="card">
+        <div id="login-row" class="row justify-content-center align-items-center" style="background-color:lightgray;">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <div class="card-body">
+                        <form action="/registros/update" method="post">
+                            <div class="form-group">
+                                <h2><label>ID del Jugador:</label></h2>
+                                <input type="text" class="form-control" name="IdJugador" value="<%= IdJugador %>" autocomplete="off" readonly>
+                            </div>
+                            <div class="form-group">
+                                <h2><label>ID del equipo:</label></h2>
+                                <input type="text" class="form-control" name="IdEquipo" value="<%= IdEquipo %>" autocomplete="off" readonly>
+                            </div>
+                            <div class="form-group">
+                                <h2><label>Numero de camiseta:</label></h2>
+                                <input type="text" class="form-control" name="NumeroCamisa" value="<%= NumeroCamisa %>" autocomplete="off" readonly>
+                            </div>
+                            <div class="form-group">
+                                <h2><label>Goles:</label></h2>
+                                <input type="text" class="form-control" name="Goles" value="<%= Goles %>" autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <h2><label>Partidos:</label></h2>
+                                <input type="text" class="form-control" name="Partidos" value="<%= Partidos %>" autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-info" value="Agregar" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="javascripts/registros.js"></script>
+
+  </body>
+  <footer>
+    <%- include('../partials/footer'); %>
+    
+  </footer>
+
+</html>

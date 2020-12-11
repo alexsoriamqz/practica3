@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+      <!-- Brand -->
+        <H2 class="navbar-brand">Registros de Jugadores con los Equipos</H2>
+        
+        
+        <h3><li class="nav-item dropdown">
+          <a class="navbar-brand" href="#" id="navbardrop" data-toggle="dropdown">
+            Categorias
+          </a>
+          <div class="dropdown-menu">
+            <h2><a class="dropdown-item" href="/jugadores">Jugadores</a></h2>
+            <h2><a class="dropdown-item" href="/equipos">Equipos</a></h2>
+            <h2><a class="dropdown-item" href="/registros">Inscripciónes</a></h2>
+          </div>
+        </li></h3>
+  
+        <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="navbar-nav mr-auto">
+          <h1><a class="nav-link active"  href="/">Inicio</a></h1>
+        </li>
+        <li class="navbar-nav mr-auto">
+          <h1><a class="nav-link active"  href="/registros/add">Agregar</a></h1>
+        </li>
+  
+      </ul>
+    </nav><br>
+
+  <div class="jumbotron">
+    <table id="tablaRegistros" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>ID Jugador</th>
+                <th>ID Equipo</th>
+                <th>Numero de Camiseta</th>
+                <th>Goles</th>
+                <th>Partidos</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.length > 0){ %>
+              <% for ( var i = 0 ; i < data.length ; i++){ %>
+                <tr>
+                  <td>
+                    <%= data[i].IdJugador%>
+                  </td>
+                  <td>
+                    <%= data[i].IdEquipo%>
+                  </td>
+                  <td>
+                    <%= data[i].NumeroCamisa%>
+                  </td>
+                  <td>
+                    <%= data[i].Goles%>
+                  </td>
+                  <td>
+                    <%= data[i].Partidos%>
+                  </td>
+                  <td>
+                    <a class="btn btn-outline-success" href="../registros/update/<%=data[i].NumeroCamisa%>">Editar</a>
+                    <a class="btn btn-outline-danger" onclick="return alert('¿Estas seguro?')" href="../registros/delete/<%=data[i].NumeroCamisa%>"> Eliminar</a>
+                  </td>
+                </tr>
+              <% } %>
+            <% } %>
+          </tbody>
+    </table><br>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="javascripts/registros.js"></script>
+
+    
+
+  </body>
+  <footer>
+    <%- include('../partials/footer'); %>
+    
+  </footer>
+
+</html>

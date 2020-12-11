@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+
+  </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+      <!-- Brand -->
+        <H2 class="navbar-brand">Listado de los Equipos</H2>
+        
+        
+        <h3><li class="nav-item dropdown">
+          <a class="navbar-brand" href="#" id="navbardrop" data-toggle="dropdown">
+            Categorias
+          </a>
+          <div class="dropdown-menu">
+            <h2><a class="dropdown-item" href="/jugadores">Jugadores</a></h2>
+            <h2><a class="dropdown-item" href="/equipos">Equipos</a></h2>
+            <h2><a class="dropdown-item" href="/registros">Inscripciónes</a></h2>
+          </div>
+        </li></h3>
+  
+        <!-- Links -->
+      <ul class="navbar-nav">
+        <li class="navbar-nav mr-auto">
+          <h1><a class="nav-link active"  href="/">Inicio</a></h1>
+        </li>
+        <li class="navbar-nav mr-auto">
+          <h1><a class="nav-link active"  href="/equipos/add">Agregar</a></h1>
+        </li>
+  
+      </ul>
+    </nav><br>
+
+  <div class="jumbotron">
+    <table id="tablaEquipos" class="display" style="width:100%">
+        <thead>
+            <tr>
+                <th>Clave Equipo</th>
+                <th>Nombre del Equipo</th>
+                <th>Entrenador</th>
+                <th>Ciudad</th>
+                <th>Pais</th>
+                <th>&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% if(data.length > 0){ %>
+              <% for ( var i = 0 ; i < data.length ; i++){ %>
+                <tr>
+                  <td>
+                    <%= data[i].ClaveEquipo%>
+                  </td>
+                  <td>
+                    <%= data[i].Nombre%>
+                  </td>
+                  <td>
+                    <%= data[i].Entrenador%>
+                  </td>
+                  <td>
+                    <%= data[i].Ciudad%>
+                  </td>
+                  <td>
+                    <%= data[i].Pais%>
+                  </td>
+                  <td>
+                    <a class="btn btn-outline-success" href="../equipos/update/<%=data[i].ClaveEquipo%>">Editar</a>
+                    <a class="btn btn-outline-danger" onclick="return alert('¿Estas seguro?')" href="../equipos/delete/<%=data[i].ClaveEquipo%>"> Eliminar</a>
+                  </td>
+                </tr>
+              <% } %>
+            <% } %>
+          </tbody>
+    </table><br>
+  </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="javascripts/equipos.js"></script>
+
+    
+
+  </body>
+  <footer>
+    <%- include('../partials/footer'); %>
+    
+  </footer>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.22/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+
+    </head>
+  <body>
+
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    
+        <!-- Brand -->
+          <H2 class="navbar-brand">Agregando Jugador</H2>
+              
+          <!-- Links -->
+        <ul class="navbar-nav">
+          <li class="navbar-nav mr-auto">
+            <h1><a class="nav-link active"  href="/jugadores">Regresar</a></h1>
+          </li>
+    
+        </ul>
+    </nav>
+
+    <div class="card">
+        <div id="login-row" class="row justify-content-center align-items-center" style="background-color:lightgray;">
+            <div id="login-column" class="col-md-6">
+                <div id="login-box" class="col-md-12">
+                    <div class="card-body"><br>
+                        <form action="/jugadores/add" method="post" >
+                            <div class="form-group">
+                                <h2><label>Clave de Jugador:</label></h2>
+                                <input type="text" class="form-control" name="ClaveJugador" value="<%= ClaveJugador %>" autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <h2><label>Nombre:</label></h2>
+                                <input type="text" class="form-control" name="Nombre" value="<%= Nombre %>" autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <h2><label>Apellidos:</label></h2>
+                                <input type="text" class="form-control" name="Apellidos" value="<%= Apellidos %>" autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <h2><label>Nacionalidad:</label></h2>
+                                <input type="text" class="form-control" name="Nacionalidad" value="<%= Nacionalidad %>" autocomplete="off" required>
+                            </div>
+                            <div class="form-group">
+                                <h2><label>Fecha de Nacimiento:</label></h2>
+                                <input type="text" class="form-control" name="FechaNac" value="<%= FechaNac %>" autocomplete="off" required>
+                            </div><br>
+                            <div class="form-group">
+                                <input type="submit" class="btn btn-info" value="Agregar" />
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.22/js/jquery.dataTables.min.js"></script>
+    <script src="javascripts/jugadores.js"></script>
+
+  </body>
+  <footer>
+    <%- include('../partials/footer'); %>
+    
+  </footer>
+
+</html>
