@@ -7,7 +7,8 @@ var mensaje = '';
 //Listado de Equipos
 router.get('/', function(req, res, next) {
     //Consume mediante RESTApi
-    request.get("http://localhost:4000/equipos", (error, response, body) => {
+    //request.get("http://localhost:4000/equipos", (error, response, body) => {
+    request.get("https://sitionov.herokuapp.com/equipos", (error, response, body) => {
 
         mensaje = '';
         if(error) { //En caso de que surga un error
@@ -65,7 +66,8 @@ router.post('/add', function(req, res, next) {
         }
     
         //Invoca al Microservicio
-        request.post({ url: "http://localhost:4000/equipos", json: datosForma }, (error, response, body) => {
+        //request.post({ url: "http://localhost:4000/equipos", json: datosForma }, (error, response, body) => {
+        request.post({ url: "https://sitionov.herokuapp.com/equipos", json: datosForma }, (error, response, body) => {
             mensaje = 'El dato se ha agregado con éxito';
             if (error) {
                 console.log(error);
@@ -85,7 +87,8 @@ router.get('/update/:ClaveEquipo', (req, res) => {
     
     var EquipoFind;
     //Busca si existe el equipo de acuerdo a la clave
-    URI = "http://localhost:4000/equipos/" + ClaveEquipo;
+    //URI = "http://localhost:4000/equipos/" + ClaveEquipo;
+    URI = "https://sitionov.herokuapp.com/equipos/" + ClaveEquipo;
     console.log('URI: ' + URI);
 
     request.get(URI, (error, response, body) => {
@@ -132,7 +135,8 @@ router.post('/update', function(req, res, next) {
             Entrenador: Entrenador
         }
         //Invoca al Microservicio de modificar
-        request.put({ url: "http://localhost:4000/equipos", json: datosForma }, (error, response, body) => {
+        //request.put({ url: "http://localhost:4000/equipos", json: datosForma }, (error, response, body) => {
+        request.put({ url: "https://sitionov.herokuapp.com/equipos", json: datosForma }, (error, response, body) => {
             mensaje = 'El dato se ha modificado con éxito';
             if (error) {
                 console.log(error);
@@ -152,7 +156,8 @@ router.get('/delete/:ClaveEquipo', (req, res) => {
     
     if (ClaveEquipo) {
         //Invoca al Microservicio
-        URI = "http://localhost:4000/equipos/" + ClaveEquipo;
+        //URI = "http://localhost:4000/equipos/" + ClaveEquipo;
+        URI = "https://sitionov.herokuapp.com/equipos/" + ClaveEquipo;
         request.delete(URI, (error, response, body) => {
             mensaje = 'El dato se ha eliminado con éxito';
             if (error) {

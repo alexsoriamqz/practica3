@@ -7,7 +7,8 @@ var mensaje = '';
 //Listado de Registros
 router.get('/', function(req, res, next) {
     //Consume mediante RESTApi
-    request.get("http://localhost:4000/registros", (error, response, body) => {
+    //request.get("http://localhost:4000/registros", (error, response, body) => {
+    request.get("https://sitionov.herokuapp.com/registros", (error, response, body) => {
 
         mensaje = '';
         if(error) { //En caso de que surga un error
@@ -65,7 +66,8 @@ router.post('/add', function(req, res, next) {
         }
     
         //Invoca al Microservicio
-        request.post({ url: "http://localhost:4000/registros", json: datosForma }, (error, response, body) => {
+        //request.post({ url: "http://localhost:4000/registros", json: datosForma }, (error, response, body) => {
+        request.post({ url: "https://sitionov.herokuapp.com/registros", json: datosForma }, (error, response, body) => {
             mensaje = 'El dato se ha agregado con éxito';
             if (error) {
                 console.log(error);
@@ -85,7 +87,8 @@ router.get('/update/:NumeroCamisa', (req, res) => {
     
     var RegistroFind;
     //Busca si existe el registro de acuerdo al numero de camiseta
-    URI = "http://localhost:4000/registros/" + NumeroCamisa;
+    //URI = "http://localhost:4000/registros/" + NumeroCamisa;
+    URI = "https://sitionov.herokuapp.com/registros" + NumeroCamisa;
     console.log('URI: ' + URI);
 
     request.get(URI, (error, response, body) => {
@@ -132,7 +135,8 @@ router.post('/update', function(req, res, next) {
             Partidos: Partidos
         }
         //Invoca al Microservicio de modificar
-        request.put({ url: "http://localhost:4000/registros", json: datosForma }, (error, response, body) => {
+        //request.put({ url: "http://localhost:4000/registros", json: datosForma }, (error, response, body) => {
+        request.put({ url: "https://sitionov.herokuapp.com/registros/", json: datosForma }, (error, response, body) => {
             mensaje = 'El dato se ha modificado con éxito';
             if (error) {
                 console.log(error);
@@ -152,7 +156,8 @@ router.get('/delete/:NumeroCamisa', (req, res) => {
     
     if (NumeroCamisa) {
         //Invoca al Microservicio
-        URI = "http://localhost:4000/registros/" + NumeroCamisa;
+        //URI = "http://localhost:4000/registros/" + NumeroCamisa;
+        URI = "https://sitionov.herokuapp.com/registros/" + NumeroCamisa;
         request.delete(URI, (error, response, body) => {
             mensaje = 'El dato se ha eliminado con éxito';
             if (error) {
