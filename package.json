@@ -3,6 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
+    "dev": "lite-server",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -15,5 +16,8 @@
     "mongoose": "^5.11.5",
     "morgan": "~1.9.1",
     "request": "^2.88.2"
+  },
+  "devDependencies": {
+    "lite-server": "^2.5.4"
   }
 }
